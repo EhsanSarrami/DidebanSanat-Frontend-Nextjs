@@ -1,0 +1,39 @@
+import Axios from "../../../src/services/AxiosConfig";
+import { GET_BLOG_POST } from "../../../src/graphql";
+import PagesHeader from "../../../src/components/pages-header";
+import LocationData from "../../../src/json/location-data/Blog.json";
+import funcLocationGenerator from "../../../src/helper/funcLocationGenerator";
+import BlogDetailWrapper from "../../../src/components/blog/blog-detail";
+
+const BlogDetail = ({ BlogPost }) => {
+  // destructure BlogPost
+  const { title, image } = BlogPost;
+  
+  return (
+    <>
+      <PagesHeader
+        title={title}
+        locationList={funcLocationGenerator(LocationData, title)}
+        DynamicBg={image}
+      />
+      <BlogDetailWrapper data={BlogPost} />
+    </>
+  );
+};
+
+export default BlogDetail;
+
+export const getServerSideProps = async (context) => {
+  // get blog post
+  const {
+    data: {
+      data: { BlogPost },
+    },
+  } = await Axios(GET_BLOG_POST, { id: context.query.id });
+
+  return {
+    props: {
+      BlogPost,
+    },
+  };
+};

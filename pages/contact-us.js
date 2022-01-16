@@ -2,12 +2,7 @@ import PagesHeader from "../src/components/pages-header";
 import LocationData from "../src/json/location-data/ContactUs.json";
 import SectionTitle from "../src/components/section-title";
 import InfoSection from "../src/components/contact-us/info-section";
-import FormMapWrapper from "../src/components/contact-us/style";
-import ContactUsForm from "../src/components/contact-us/form";
-import dynamic from "next/dynamic";
-const ContactUsMap = dynamic(() => import("../src/components/contact-us/map"), {
-  ssr: false,
-});
+import ContactUsWrapper from "../src/components/contact-us";
 
 const ContactUs = () => {
   return (
@@ -23,12 +18,7 @@ const ContactUs = () => {
         spacTop="true"
       />
       <InfoSection />
-      <section className="container flex-wrapper flex-center space-top">
-        <FormMapWrapper className="wrapper">
-          <ContactUsForm />
-          <ContactUsMap />
-        </FormMapWrapper>
-      </section>
+      <ContactUsWrapper />
     </>
   );
 };

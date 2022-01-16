@@ -163,6 +163,7 @@ query GetProductsCategories {
     slug
     parentCategory {
       name
+      slug
     }
   }
   parentCategories {

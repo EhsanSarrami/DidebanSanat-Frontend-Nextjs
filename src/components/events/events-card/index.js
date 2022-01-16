@@ -1,7 +1,8 @@
 import { EventsCardWrapper } from "./style";
 import Image from "next/image";
-import funcConvertDate from "../../../Helper/funcConvertDate";
+import funcConvertDate from "../../../helper/funcConvertDate";
 import StyledLink from "../../../core-ui/styled-link";
+import funcReplaceAll from "../../../helper/funcReplaceAll";
 import funcImageLoader from "../../../helper/funcImageLoader";
 
 const EventsCard = ({ data }) => {
@@ -11,11 +12,12 @@ const EventsCard = ({ data }) => {
     <EventsCardWrapper>
       <StyledLink
         className="events-card-image"
-        href={`/events/${slug}?id=${id}`}
+        href={`/events/${funcReplaceAll(title, " ", "-")}-${slug}?id=${id}`}
+        notRound={true}
       >
         <Image
           src={funcImageLoader(image)}
-          alt={title}
+          alt={altImage}
           layout="fill"
           objectFit="cover"
           quality={60}
@@ -24,7 +26,7 @@ const EventsCard = ({ data }) => {
       <div className="events-card-content">
         <StyledLink
           className="events-card__title"
-          href={`/events/${slug}?id=${id}`}
+          href={`/events/${funcReplaceAll(title, " ", "-")}-${slug}?id=${id}`}
         >
           {title}
         </StyledLink>

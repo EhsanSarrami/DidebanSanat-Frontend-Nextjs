@@ -4,13 +4,18 @@ import Image from "next/image";
 import StyledLink from "../../../core-ui/styled-link";
 import funcConvertDate from "../../../helper/funcConvertDate";
 import funcImageLoader from "../../../helper/funcImageLoader";
+import funcReplaceAll from "../../../helper/funcReplaceAll";
 
 const BlogCard = ({ data }) => {
   const { title, author, publish, category, image, slug, id } = data;
 
   return (
     <BlogCardWrapper>
-      <StyledLink className="blog-card-image" href={`/blog/${slug}?id=${id}`}>
+      <StyledLink
+        className="blog-card-image"
+        href={`/blog/${funcReplaceAll(title, " ", "-")}_${slug}?id=${id}`}
+        notRound={true}
+      >
         <Image
           src={funcImageLoader(image)}
           alt={title}
@@ -28,7 +33,7 @@ const BlogCard = ({ data }) => {
         </h5>
         <StyledLink
           className="blog-card__title"
-          href={`/blog/${slug}?id=${id}`}
+          href={`/blog/${funcReplaceAll(title, " ", "-")}_${slug}?id=${id}`}
         >
           {title}
         </StyledLink>

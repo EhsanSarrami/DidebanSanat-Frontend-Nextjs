@@ -1,5 +1,6 @@
 import React from "react";
 import { LatestProductsCardWrapper } from "./style";
+import Config from "../../../services/Config.json";
 
 const LatestProductsCard = ({ data }) => {
   const { image, name } = data;
@@ -11,7 +12,7 @@ const LatestProductsCard = ({ data }) => {
       data-aos-duration="2000"
     >
       <img
-        src={`${Confige.HostMediaEndpoint}/${image}`}
+        src={`${Config.mediaURL}/${image}`}
         alt={name}
         className="latest-products-card__image"
       />

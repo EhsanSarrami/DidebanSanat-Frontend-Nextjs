@@ -15,7 +15,7 @@ const StyledLinkWrapper = styled.a`
     props.isBtn ? "1px 1px 6px rgb(0 0 0 / 25%)" : "none"};
   cursor: pointer;
   border: 0;
-  border-radius: 8px;
+  border-radius: ${(props) => (props.notRound ? "0" : "8px")};
   transition: all 0.5s ease;
   display: flex;
   justify-content: center;
@@ -27,8 +27,7 @@ const StyledLinkWrapper = styled.a`
         ? "linear-gradient(95deg, #059dff 15%, #6549d5 45%, #e33fa1 75%, #fb5343) 95%/200% 100%"
         : "transparent"};
 
-    filter: ${(props) =>
-      props.isBtn ? "brightness(125%)" : ""};
+    filter: ${(props) => (props.isBtn ? "brightness(125%)" : "")};
   }
 
   & svg {

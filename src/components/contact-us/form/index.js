@@ -18,7 +18,7 @@ const ContactUsForm = () => {
   const handleSubmit = (values) => console.log(values);
 
   return (
-    <ContactUsFormWrapper data-aos="fade-right">
+    <ContactUsFormWrapper>
       <FormWrapper handleSubmit={handleSubmit} formValues={formValues}>
         <TextField
           name="fullName"

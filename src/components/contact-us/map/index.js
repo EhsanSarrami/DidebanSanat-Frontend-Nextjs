@@ -1,25 +1,29 @@
-import { useRef, useEffect } from "react";
 import ContactUsMapWrapper from "./style";
+import useMap from "../../../hooks/useMap";
 import L from "leaflet";
 
 const ContactUsMap = () => {
-  // declare map ref
-  const mapRef = useRef();
+  // create marker
+  const MapMarker = L.icon({
+    iconUrl: "/image/map-marker.png",
+    iconSize: [42, 42], // size of the icon
+  });
 
-  // add map to ref when component mount
-  useEffect(() => {
-    let map = L.map(mapRef.current).setView([51.505, -0.09], 13);
+  // nake marker and pass to use map hook
+  const mapFunc = (mapBase, L) => {
+    L.marker([35.72212780479392, 51.3283235442065], { icon: MapMarker })
+      .addTo(mapBase)
+      .bindPopup(
+        "آدرس : فلکه دوم صادقیه خیابان ولیعصر - خیابان اعتمادیان پلاک 36 واحد 2"
+      );
+  };
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
-
-  }, []);
+  // use map hook
+  const MapElement = useMap([35.72212780479392, 51.3283235442065], 15, mapFunc);
 
   return (
     <ContactUsMapWrapper>
-      <div className="map-container" ref={mapRef} />
+      <MapElement />
     </ContactUsMapWrapper>
   );
 };

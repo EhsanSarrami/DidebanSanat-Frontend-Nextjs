@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const ContactUsMapWrapper = styled.div`
+  position: relative;
   width: 45%;
   height: 570px;
   border-radius: 0.5rem;
@@ -11,11 +12,6 @@ const ContactUsMapWrapper = styled.div`
   & svg {
     font-size: 2.5rem;
     color: ${({ theme }) => theme.primaryColor};
-  }
-
-  .map-container {
-    width: 100%;
-    height: 100%;
   }
 
   @media (max-width: 992px) {

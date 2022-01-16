@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Confige from "../../services/Config.json";
+import Config from "../../services/Config.json";
 
 export const PagesHeaderContainer = styled.section`
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
@@ -7,7 +7,7 @@ export const PagesHeaderContainer = styled.section`
   background: ${(props) =>
       props.staticBg
         ? `url(${`/image/Header/${props.staticBg}`})`
-        : `url(${`${Confige.HostMediaEndpoint}/${props.dynamicBg}`})`}
+        : `url(${`${Config.mediaURL}/${props.dynamicBg}`})`}
     no-repeat center center / cover fixed;
 
   &::before {

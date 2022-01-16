@@ -12,16 +12,14 @@ export const ProductCardWrapper = styled.div`
     rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 
   .product-card-image {
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 241px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     & img {
-      width: 100%;
-      height: 241px;
-      object-fit: cover;
       transition: all 0.5s ease;
 
       @media (max-width: 1200px) {

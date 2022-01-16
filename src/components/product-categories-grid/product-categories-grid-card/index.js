@@ -1,5 +1,5 @@
 import { ProductsCategoriesListCardWrapper } from "./style";
-import Config from "../../../Services/Config.json";
+import Config from "../../../services/Config.json";
 import StyledLink from "../../../core-ui/styled-link";
 
 const ProductsCategoriesListCard = ({ data }) => {
