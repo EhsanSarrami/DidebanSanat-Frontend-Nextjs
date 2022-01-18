@@ -5,6 +5,7 @@ import StyledLink from "../../../core-ui/styled-link";
 import funcConvertDate from "../../../helper/funcConvertDate";
 import funcImageLoader from "../../../helper/funcImageLoader";
 import funcReplaceAll from "../../../helper/funcReplaceAll";
+import funcBlurDataUrl from "../../../helper/funcBlurDataUrl";
 
 const BlogCard = ({ data }) => {
   const { title, author, publish, category, image, slug, id } = data;
@@ -24,6 +25,8 @@ const BlogCard = ({ data }) => {
           layout="intrinsic"
           objectFit="cover"
           quality={60}
+          placeholder="blur"
+          blurDataURL={funcBlurDataUrl()}
         />
       </StyledLink>
       <div className="blog-card-content">

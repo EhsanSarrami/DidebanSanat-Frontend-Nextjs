@@ -1,10 +1,13 @@
+import AppContextProvider from "../src/context";
 import Layout from "../layout";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <AppContextProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </AppContextProvider>
   );
 };
 

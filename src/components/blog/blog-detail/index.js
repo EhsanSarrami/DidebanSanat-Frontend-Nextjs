@@ -3,6 +3,7 @@ import { BlogDetailContainer } from "./style";
 import Image from "next/image";
 import funcImageLoader from "../../../helper/funcImageLoader";
 import funcConvertDate from "../../../helper/funcConvertDate";
+import funcBlurDataUrl from "../../../helper/funcBlurDataUrl";
 
 const BlogDetailWrapper = ({ data }) => {
   // destructure data
@@ -29,6 +30,8 @@ const BlogDetailWrapper = ({ data }) => {
             objectFit="cover"
             quality={60}
             data-aos="fade-up"
+            placeholder="blur"
+            blurDataURL={funcBlurDataUrl()}
           />
         </div>
         <div className="blog-detail-header" data-aos="fade-up">

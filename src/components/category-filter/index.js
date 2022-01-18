@@ -5,12 +5,12 @@ import funcReplaceAll from "../../helper/funcReplaceAll";
 
 const CategoryFilter = ({ data }) => {
   // use get hash url hook
-  const { pathname, hashUrl } = useGetHashUrl();
+  const { pathname, hashUrl, hasHash } = useGetHashUrl();
 
   return (
     <div className="wrapper flex-wrapper flex-center" data-aos="fade-up">
       <CategoryFilterList>
-        <CategoryFilterItem active={hashUrl === pathname}>
+        <CategoryFilterItem active={!hasHash}>
           <Link href={`${pathname}`}>همه</Link>
         </CategoryFilterItem>
         {data.map(({ name, id }) => (

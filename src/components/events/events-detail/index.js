@@ -3,6 +3,7 @@ import { EventsDetailContainer } from "./style";
 import Image from "next/image";
 import funcImageLoader from "../../../helper/funcImageLoader";
 import funcConvertDate from "../../../helper/funcConvertDate";
+import funcBlurDataUrl from "../../../helper/funcBlurDataUrl";
 
 const EventsDetailWrapper = ({ data }) => {
   // destructure data
@@ -29,6 +30,8 @@ const EventsDetailWrapper = ({ data }) => {
             objectFit="cover"
             quality={60}
             data-aos="fade-up"
+            placeholder="blur"
+            blurDataURL={funcBlurDataUrl()}
           />
         </div>
         <div className="events-detail-header" data-aos="fade-up">

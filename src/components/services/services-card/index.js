@@ -1,6 +1,7 @@
 import { ServiceCardWrapper } from "./style";
 import Image from "next/image";
 import funcImageLoader from "../../../helper/funcImageLoader";
+import funcBlurDataUrl from "../../../helper/funcBlurDataUrl";
 
 const ServicesCard = ({ data }) => {
   // destructure data
@@ -26,6 +27,8 @@ const ServicesCard = ({ data }) => {
           width={256}
           height={159}
           quality={50}
+          placeholder="blur"
+          blurDataURL={funcBlurDataUrl()}
         />
       </div>
     </ServiceCardWrapper>

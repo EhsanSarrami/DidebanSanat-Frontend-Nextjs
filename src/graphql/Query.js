@@ -174,10 +174,11 @@ query GetProductsCategories {
 }
 `;
 
-export const GET_PRODUCTS_SUB_CATEGORIES = `
-query GetProductSubCategories($id: Int) {
-  firstSubCategories(id: $id) {
+export const SUB_PRODUCTS_CATEGORIES = `
+query GetProductSubCategories($name: String) {
+  firstSubCategories(name: $name) {
     name
+    slug
     image
     productFirstSubCategory {
       id
@@ -185,10 +186,10 @@ query GetProductSubCategories($id: Int) {
       slug
       image
       altImage
-      productSecondSubCategory{
+      productSecondSubCategory {
         name
       }
-      productFirstSubCategory{
+      productFirstSubCategory {
         name
       }
     }

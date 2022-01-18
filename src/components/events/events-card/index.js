@@ -4,6 +4,7 @@ import funcConvertDate from "../../../helper/funcConvertDate";
 import StyledLink from "../../../core-ui/styled-link";
 import funcReplaceAll from "../../../helper/funcReplaceAll";
 import funcImageLoader from "../../../helper/funcImageLoader";
+import funcBlurDataUrl from "../../../helper/funcBlurDataUrl";
 
 const EventsCard = ({ data }) => {
   const { title, author, publish, category, image, altImage, slug, id } = data;
@@ -21,6 +22,8 @@ const EventsCard = ({ data }) => {
           layout="fill"
           objectFit="cover"
           quality={60}
+          placeholder="blur"
+          blurDataURL={funcBlurDataUrl()}
         />
       </StyledLink>
       <div className="events-card-content">

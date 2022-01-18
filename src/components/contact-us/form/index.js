@@ -3,6 +3,10 @@ import FormWrapper from "../../../components/form-wrapper";
 import TextField from "../../../core-ui/text-field";
 import SubmitButton from "../../../core-ui/submit-button";
 import TextAreaField from "../../../core-ui/text-area-field";
+import { ContactUsValidate } from "../../../validations";
+import Axios from "../../../services/AxiosConfig";
+import { CREATE_CONTACT } from "../../../graphql/Mutation";
+import toast from "react-hot-toast";
 
 const ContactUsForm = () => {
   // initial form values
@@ -15,11 +19,38 @@ const ContactUsForm = () => {
   };
 
   // handle submit form
-  const handleSubmit = (values) => console.log(values);
+  const handleSubmit = async (values, event) => {
+    try {
+      const {
+        data: {
+          data: {
+            createTicket: {
+              ticket: { fullName },
+            },
+          },
+        },
+        status,
+      } = await Axios(CREATE_CONTACT, values);
+
+      // if status was 200 show toast
+      if (status === 200) {
+        toast.success(`${fullName} عزیز پیام شما با موفقیت ارسال شد.`);
+        event.resetForm();
+      }
+    } catch (error) {
+      toast.error(
+        `${values.fullName} عزیز فرایند ارسال پیام شما با مشکل مواجه شد.`
+      );
+    }
+  };
 
   return (
     <ContactUsFormWrapper>
-      <FormWrapper handleSubmit={handleSubmit} formValues={formValues}>
+      <FormWrapper
+        handleSubmit={handleSubmit}
+        formValues={formValues}
+        validationObj={ContactUsValidate}
+      >
         <TextField
           name="fullName"
           type="text"

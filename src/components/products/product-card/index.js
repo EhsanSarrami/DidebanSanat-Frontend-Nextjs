@@ -1,17 +1,16 @@
-import { useRouter } from "next/router";
 import { ProductCardWrapper } from "./style";
 import StyledLink from "../../../core-ui/styled-link";
-import Config from "../../../services/Config.json";
 import Image from "next/image";
 import funcImageLoader from "../../../helper/funcImageLoader";
 import funcReplaceAll from "../../../helper/funcReplaceAll";
+import funcBlurDataUrl from "../../../helper/funcBlurDataUrl";
 
 const ProductCard = ({ data, type }) => {
   // destructure data
-  const { slug, image, id, title, name } = data;
+  const { image, title, name, id } = data;
 
   // use router hook to get pathname
-  const { pathname } = useRouter();
+  const pathname = typeof window !== "undefined" && window.location.pathname;
 
   // render card url
   const renderUrl = () => {
@@ -21,7 +20,12 @@ const ProductCard = ({ data, type }) => {
         " ",
         "-"
       )}`;
-    else return `${pathname}/${data.productSecondSubCategory.slug}-${slug}`;
+    else
+      return `${pathname}/${data.slug}-${funcReplaceAll(
+        title,
+        " ",
+        "-"
+      )}?id=${id}`;
   };
 
   return (
@@ -37,6 +41,8 @@ const ProductCard = ({ data, type }) => {
           objectFit="cover"
           quality={60}
           alt={type === "parent" ? name : title}
+          placeholder="blur"
+          blurDataURL={funcBlurDataUrl()}
         />
       </StyledLink>
       <StyledLink className="product-card__name" href={renderUrl()}>

@@ -4,12 +4,13 @@ import CategoryFilter from "../../category-filter";
 import ProductCard from "../product-card";
 import useGetHashUrl from "../../../hooks/useGetHashUrl";
 import funcReplaceAll from "../../../helper/funcReplaceAll";
+import ContentNotFound from "../../content-not-found";
 
 const ProductList = ({ data, categories, type }) => {
   const [filteredData, setFilteredData] = useState(data);
 
   // use hash url hook
-  const { pathname, hashUrl } = useGetHashUrl();
+  const { hashUrl, hasHash } = useGetHashUrl();
 
   // filter data
   useEffect(() => {
@@ -18,15 +19,18 @@ const ProductList = ({ data, categories, type }) => {
         data.filter((product) => {
           if (funcReplaceAll(product.parentCategory.name, " ", "-") === hashUrl)
             return true;
-          if (hashUrl === pathname) return data;
+          if (!hasHash) return data;
         })
       );
     } else {
       setFilteredData(
         data.filter((product) => {
-          if (funcReplaceAll(product.productSecondSubCategory.name, " ", "-") === hashUrl)
+          if (
+            funcReplaceAll(product.productSecondSubCategory.name, " ", "-") ===
+            hashUrl
+          )
             return true;
-          if (hashUrl === pathname) return data;
+          if (!hasHash) return data;
         })
       );
     }

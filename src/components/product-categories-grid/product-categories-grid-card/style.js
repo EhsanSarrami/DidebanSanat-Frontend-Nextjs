@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const ProductsCategoriesListCardWrapper = styled.div`
   position: relative;
+  width: 100%;
+  height: 220px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -9,9 +11,8 @@ export const ProductsCategoriesListCardWrapper = styled.div`
   border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
+
   .products-categories-list-card__image {
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

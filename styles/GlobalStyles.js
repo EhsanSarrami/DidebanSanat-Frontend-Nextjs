@@ -145,18 +145,18 @@ body {
 }
 
 .hot-toast-container{
-    width: auto;
-    max-width: 95%;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-    font-weight: 700;
-    padding: 1em 2em;
-    background: ${({ theme }) => theme.bgQuinary};
-    color: ${({ theme }) => theme.black};
-    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    width: 768px !important;
+    max-width: 95% !important;
+    font-size: 1.2rem !important;
+    line-height: 1.8rem !important;
+    font-weight: 700 !important;
+    padding: 1em 2em !important;
+    background: ${({ theme }) => theme.bgQuinary} !important;
+    color: ${({ theme }) => theme.black} !important;
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px !important;
 
     @media(max-width:576px){
-        font-size: 1rem;
+        font-size: 1rem !important;
     }
 }
 

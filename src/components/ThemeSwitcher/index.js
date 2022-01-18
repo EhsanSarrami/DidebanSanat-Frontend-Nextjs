@@ -1,11 +1,15 @@
+import { useContext } from "react";
+import { AppContext } from "../../context";
 import { ThemeSwitcherBtn } from "./style";
 import { BsFillMoonFill, BsSunFill } from "react-icons/bs";
-import { setStoreage } from "../../helper/funcLocalStoreage";
 
 const ThemeSwitcher = () => {
+  // use context
+  const { darkTheme, changeTheme } = useContext(AppContext);
 
   // handle change theme
   const handleChangeTheme = () => {
+    changeTheme();
     setStoreage("darkTheme", JSON.stringify(true));
   };
 

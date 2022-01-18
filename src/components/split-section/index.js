@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { SplitSectionWrapper, SplitSectionContent } from "./SplitSectionStyle";
+import funcBlurDataUrl from "../../helper/funcBlurDataUrl";
 
 const SplitSection = ({ data }) => {
   const { image, title, description } = data;
@@ -21,12 +22,14 @@ const SplitSection = ({ data }) => {
           <Image
             src={`/image/SplitSection/${image}`}
             alt={title}
-            width={500}
-            height={320}
-            layout="responsive"
-            priority
+            layout="fill"
+            objectFit="cover"
+            quality={60}
+            placeholder="blur"
+            blurDataURL={funcBlurDataUrl()}
           />
         </div>
+
       </SplitSectionWrapper>
     </div>
   );

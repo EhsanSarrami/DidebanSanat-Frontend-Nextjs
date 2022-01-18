@@ -36,4 +36,5 @@ export const getServerSideProps = async (context) => {
       BlogPost,
     },
   };
+  
 };

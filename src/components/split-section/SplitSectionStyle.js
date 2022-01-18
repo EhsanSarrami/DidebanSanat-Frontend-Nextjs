@@ -9,16 +9,28 @@ export const SplitSectionWrapper = styled.section`
   }
 
   .split-section-image {
+    position: relative;
     width: 46%;
-
-    & img {
-      width: 100%;
-      border-radius: 8px;
-    }
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
 
     @media (max-width: 992px) {
       width: 100%;
+      height: 550px;
       order: 1;
+    }
+
+    @media (max-width: 768px) {
+      height: 350px;
+    }
+
+    @media (max-width: 576px) {
+      height: 300px;
+    }
+
+    @media (max-width: 576px) {
+      height: 280px;
     }
   }
 `;
