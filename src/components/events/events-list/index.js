@@ -27,7 +27,7 @@ const EventsList = ({ categories, posts }) => {
         if (hashUrl === pathname) return posts;
       })
     );
-  }, [hashUrl]);
+  }, [hashUrl, pathname, posts]);
 
   // pagination blog
   const lastPostIndex = currentPage * 6;

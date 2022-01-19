@@ -8,7 +8,6 @@ const ContactUsMapWrapper = styled.div`
   overflow: hidden;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    margin-top: 8em;
 
   & svg {
     font-size: 2.5rem;
@@ -18,6 +17,7 @@ const ContactUsMapWrapper = styled.div`
   @media (max-width: 992px) {
     width: 100%;
     height: 300px;
+    margin-top: 8em;
   }
 `;
 

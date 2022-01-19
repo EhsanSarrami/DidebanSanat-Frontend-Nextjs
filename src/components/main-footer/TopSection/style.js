@@ -45,6 +45,10 @@ export const TopSectionCol = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 768px) {
+      align-items: flex-start;
+    }
   }
 
   .section-col__title {
@@ -148,8 +152,5 @@ export const TopSectionCol = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    & img {
-      width: 100%;
-    }
   }
 `;

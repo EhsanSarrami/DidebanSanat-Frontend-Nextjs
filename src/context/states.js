@@ -1,3 +1,7 @@
+import { getStoreage } from "../helper";
+
 export const initialStates = {
-  darkTheme: false,
+  darkTheme: getStoreage("darkTheme")
+    ? JSON.parse(getStoreage("darkTheme"))
+    : false,
 };

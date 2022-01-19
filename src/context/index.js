@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
 import { initialStates } from "./states";
-import { setStoreage } from "../helper";
 
 export const AppContext = createContext(initialStates);
 

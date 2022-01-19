@@ -4,7 +4,7 @@ import StyledLinkWrapper from "./style";
 
 const StyledLink = ({ href, children, ...props }) => {
   return (
-    <Link href={href}>
+    <Link href={href} scroll={true}>
       <StyledLinkWrapper {...props}>{children}</StyledLinkWrapper>
     </Link>
   );

@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BottomSectionWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 2em 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);

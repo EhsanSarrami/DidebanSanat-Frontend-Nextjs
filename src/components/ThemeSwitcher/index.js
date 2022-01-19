@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../../context";
 import { ThemeSwitcherBtn } from "./style";
 import { BsFillMoonFill, BsSunFill } from "react-icons/bs";
+import { setStoreage } from "../../helper";
 
 const ThemeSwitcher = () => {
   // use context
@@ -9,13 +10,13 @@ const ThemeSwitcher = () => {
 
   // handle change theme
   const handleChangeTheme = () => {
+    setStoreage("darkTheme", JSON.stringify(!darkTheme));
     changeTheme();
-    setStoreage("darkTheme", JSON.stringify(true));
   };
 
   return (
     <ThemeSwitcherBtn onClick={handleChangeTheme}>
-      {true ? <BsSunFill /> : <BsFillMoonFill />}
+      {darkTheme ? <BsSunFill /> : <BsFillMoonFill />}
     </ThemeSwitcherBtn>
   );
 };

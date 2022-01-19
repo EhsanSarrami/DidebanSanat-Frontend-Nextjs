@@ -61,7 +61,7 @@ const ImageSection = ({ data: { productGallery, image, altImage } }) => {
           />
         </div>
         {productGallery.map(({ image, altImage, id }) => (
-          <div className="image-section-grid__img">
+          <div className="image-section-grid__img" key={id}>
             <Image
               src={funcImageLoader(image)}
               key={id}

@@ -1,12 +1,17 @@
+import { useContext } from "react";
+import { AppContext } from "../../../context";
 import NavbarLogoWrapper from "./style";
 import StyledLink from "../../../core-ui/styled-link";
 import Image from "next/image";
 
 const NavbarLogo = ({ sticky }) => {
+  // use context
+  const { darkTheme } = useContext(AppContext);
+
   return (
     <NavbarLogoWrapper>
       <StyledLink href="/">
-        {true ? (
+        {darkTheme ? (
           sticky ? (
             <Image
               src="/image/DidebanLogoDark.png"

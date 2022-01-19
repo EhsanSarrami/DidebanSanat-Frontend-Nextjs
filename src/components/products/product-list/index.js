@@ -34,7 +34,7 @@ const ProductList = ({ data, categories, type }) => {
         })
       );
     }
-  }, [hashUrl]);
+  }, [hashUrl, data, type]);
 
   return (
     <ProductListContainer

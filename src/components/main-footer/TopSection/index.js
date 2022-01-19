@@ -1,5 +1,7 @@
 import React from "react";
 import { TopSectionWrapper, TopSectionCol } from "./style";
+import Link from "next/link";
+import Image from "next/image";
 import StyledLink from "../../../core-ui/styled-link";
 import { FiInstagram } from "react-icons/fi";
 import { FaTelegramPlane, FaLinkedinIn } from "react-icons/fa";
@@ -14,23 +16,31 @@ const TopSection = () => {
           با ما از طریق شبکه های اجتماعی در ارتباط باشید
         </h6>
         <div className="section-col-row">
-          <a className="col-row__icon" href="/">
-            <FiInstagram />
-          </a>
-          <a className="col-row__icon" href="/">
-            <FaTelegramPlane />
-          </a>
-          <a className="col-row__icon" href="/">
-            <SiAparat />
-          </a>
-          <a className="col-row__icon" href="/">
-            <FaLinkedinIn />
-          </a>
+          <Link href="https://www.instagram.com">
+            <a className="col-row__icon">
+              <FiInstagram />
+            </a>
+          </Link>
+          <Link href="https://www.instagram.com">
+            <a className="col-row__icon">
+              <FaTelegramPlane />
+            </a>
+          </Link>
+          <Link href="https://www.instagram.com">
+            <a className="col-row__icon">
+              <SiAparat />
+            </a>
+          </Link>
+          <Link href="https://www.instagram.com">
+            <a className="col-row__icon">
+              <FaLinkedinIn />
+            </a>
+          </Link>
         </div>
       </TopSectionCol>
       <TopSectionCol className="hrefp-section-col">
         <h4 className="section-col__title">سرویس ها</h4>
-        <StyledLink className="section-col__link" href="/products">
+        <StyledLink className="section-col__link" href="/products-categories">
           محصولات
         </StyledLink>
         <StyledLink className="section-col__link" href="/blog">
@@ -48,7 +58,7 @@ const TopSection = () => {
         <StyledLink className="section-col__link" href="/about">
           درباره ما
         </StyledLink>
-        <StyledLink className="section-col__link" href="/contact">
+        <StyledLink className="section-col__link" href="/contact-us">
           تماس با ما
         </StyledLink>
       </TopSectionCol>
@@ -62,9 +72,15 @@ const TopSection = () => {
         </p>
       </TopSectionCol>
       <TopSectionCol className="hrefp-section-col namad-col">
-        <a href="/" className="section-col__image">
-          <img src="/image/Contact/namad-electronic.png" alt="نماد الکترونیک" />
-        </a>
+        <StyledLink href="/" className="section-col__image">
+          <Image
+            src="/image/Contact/namad-electronic.png"
+            alt="نماد الکترونیک"
+            width={85}
+            height={85}
+            layout="fixed"
+          />
+        </StyledLink>
       </TopSectionCol>
     </TopSectionWrapper>
   );

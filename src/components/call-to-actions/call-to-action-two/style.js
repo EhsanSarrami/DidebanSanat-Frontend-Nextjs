@@ -22,10 +22,6 @@ export const CallToActionTwoWrapper = styled.div`
     align-items: flex-start;
     text-align: justify;
 
-    & img {
-      width: 9rem;
-    }
-
     & p {
       font-size: 1rem;
       color: ${(props) => props.theme.textSecoundary};
