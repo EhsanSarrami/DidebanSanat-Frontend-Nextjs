@@ -6,6 +6,7 @@ import PagesHeaderLocation from "../../../../../src/json/location-data/ProductCa
 import { GET_PRODUCT_Detail } from "../../../../../src/graphql";
 import Axios from "../../../../../src/services/AxiosConfig";
 import { default as ProductDetailWrapper } from "../../../../../src/components/products/product-detail";
+import CostomHead from "../../../../../src/components/custom-head";
 
 const ProductDetail = ({ product }) => {
   // destructure product
@@ -20,6 +21,7 @@ const ProductDetail = ({ product }) => {
 
   return (
     <>
+      <CostomHead data={{ title: title, metas: [] }} />
       <PagesHeader
         title={title}
         locationList={funcLocationGenerator(

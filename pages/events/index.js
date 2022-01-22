@@ -3,10 +3,13 @@ import LocationData from "../../src/json/location-data/Events.json";
 import EventsList from "../../src/components/events/events-list";
 import { GET_EVENTS_DATA } from "../../src/graphql/Query";
 import Axios from "../../src/services/AxiosConfig";
+import CostomHead from "../../src/components/custom-head";
+import { EventsHead } from "../../src/json/heades";
 
 const Events = ({ eventCategories, events }) => {
   return (
     <>
+      <CostomHead data={EventsHead} />
       <PagesHeader
         title="رویدادهای دیده بان صنعت"
         locationList={LocationData}

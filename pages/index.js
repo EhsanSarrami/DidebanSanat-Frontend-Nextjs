@@ -16,10 +16,13 @@ import BrandsSectionTitle from "../src/json/section-title/Brands.json";
 import SlickSlider from "../src/components/slick-slider";
 import BrandSlide from "../src/components/brand-slide";
 import BrandsSliderSetting from "../src/json/slider-settings/brands.json";
+import CustomHead from "../src/components/custom-head";
+import { HomeHeads } from "../src/json/heades";
 
 const Home = ({ parentCategories, latestBlogPosts, brands }) => {
   return (
     <>
+      <CustomHead data={HomeHeads} />
       <HomeSection />
       <SplitSection data={AboutSplitSection} />
       <ProductsCategoriesList productCategories={parentCategories} />

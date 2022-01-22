@@ -7,10 +7,13 @@ import { GET_SERVICES_POST } from "../src/graphql";
 import ServicesList from "../src/components/services/services-list";
 import CallToActionOne from "../src/components/call-to-actions/call-to-action-one";
 import CallToActionOneData from "../src/json/call-to-action/Services.json";
+import CostomHead from "../src/components/custom-head";
+import { ServicesHead } from "../src/json/heades";
 
 const services = ({ services }) => {
   return (
     <>
+      <CostomHead data={ServicesHead} />
       <PagesHeader
         title="خدمات دیده بان صنعت"
         locationList={LocationData}

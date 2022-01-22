@@ -7,15 +7,15 @@ import funcLocationGenerator from "../../../../src/helper/funcLocationGenerator"
 import SectionTitle from "../../../../src/components/section-title";
 import ProductList from "../../../../src/components/products/product-list";
 import funcReplaceAll from "../../../../src/helper/funcReplaceAll";
+import CostomHead from "../../../../src/components/custom-head";
 
 const SubProductCategories = ({ data }) => {
   // destructure data
   const { image, name, firstSubCategory, productFirstSubCategory } = data;
 
-  console.log(data);
-
   return (
     <>
+      <CostomHead data={{ title: name, metas: [] }} />
       <PagesHeader
         title={name}
         locationList={funcLocationGenerator(PagesHeaderLocation, name)}

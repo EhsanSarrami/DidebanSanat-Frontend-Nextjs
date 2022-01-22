@@ -1,0 +1,35 @@
+{
+  "title": "محصولات شرکت توسعه ارتباطات دیده بان صنعت",
+  "metas": [
+    {
+      "id": 1,
+      "name": "description",
+      "content": "محصولات شرکت توسعه ارتباطات دیده بان صنعت"
+    },
+    {
+      "id": 2,
+      "name": "robots",
+      "content": "index, follow"
+    },
+    {
+      "id": 3,
+      "property": "og:site_name",
+      "content": "didebansanat"
+    },
+    {
+      "id": 4,
+      "property": "og:title",
+      "content": "didebansanat"
+    },
+    {
+      "id": 5,
+      "property": "og:image",
+      "content": "/image/DidebanLogo.png"
+    },
+    {
+      "id": 6,
+      "property": "og:url",
+      "content": "https://didebansanat.com/"
+    }
+  ]
+}

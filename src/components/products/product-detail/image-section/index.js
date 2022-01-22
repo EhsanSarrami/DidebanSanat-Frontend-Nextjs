@@ -3,7 +3,7 @@ import { ImageSectionWrapper } from "./style";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Image from "next/image";
 import funcImageLoader from "../../../../helper/funcImageLoader";
-import funcBlurDataUrl from "../../../../helper/funcBlurDataURL";
+import funcBlurDataUrl from "../../../../helper/funcBlurDataUrl";
 
 const ImageSection = ({ data: { productGallery, image, altImage } }) => {
   const [current, setCurrent] = useState(0);

@@ -11,7 +11,11 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <AppContextProvider>
-      <Layout>{mouned && <Component {...pageProps} />}</Layout>
+      {mouned && (
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      )}
     </AppContextProvider>
   );
 };

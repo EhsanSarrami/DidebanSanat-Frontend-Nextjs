@@ -5,10 +5,13 @@ import PagesHeaderLocation from "../../src/json/location-data/ProductCategories.
 import SectionTitle from "../../src/components/section-title";
 import SectionTitleData from "../../src/json/section-title/ProductsCategories.json";
 import ProductList from "../../src/components/products/product-list";
+import CostomHead from "../../src/components/custom-head";
+import { ProductCategoriesHead } from "../../src/json/heades";
 
 const ProductCategories = ({ firstSubCategories, parentCategories }) => {
   return (
     <>
+      <CostomHead data={ProductCategoriesHead} />
       <PagesHeader
         title="محصولات دیده بان صنعت"
         locationList={PagesHeaderLocation}
