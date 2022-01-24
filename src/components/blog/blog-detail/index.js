@@ -24,7 +24,8 @@ const BlogDetailWrapper = ({ data }) => {
       <BlogDetailContainer className="wrapper">
         <div className="blog-detail-image">
           <Image
-            src={funcImageLoader(image)}
+            src={image}
+            loader={funcImageLoader}
             alt={altImage}
             layout="fill"
             objectFit="cover"

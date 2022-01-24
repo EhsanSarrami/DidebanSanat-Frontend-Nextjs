@@ -15,7 +15,8 @@ const ImageSection = ({ data: { productGallery, image, altImage } }) => {
           <TransformComponent>
             {current === 0 ? (
               <Image
-                src={funcImageLoader(image)}
+                src={image}
+                loader={funcImageLoader}
                 alt={altImage}
                 layout="fill"
                 objectFit="cover"
@@ -29,7 +30,8 @@ const ImageSection = ({ data: { productGallery, image, altImage } }) => {
                 if (id === current)
                   return (
                     <Image
-                      src={funcImageLoader(image)}
+                      src={image}
+                      loader={funcImageLoader}
                       alt={altImage}
                       key={id}
                       layout="fill"
@@ -50,7 +52,8 @@ const ImageSection = ({ data: { productGallery, image, altImage } }) => {
       <div className="image-section-grid">
         <div className="image-section-grid__img">
           <Image
-            src={funcImageLoader(image)}
+            src={image}
+            loader={funcImageLoader}
             alt={altImage}
             layout="fill"
             objectFit="cover"
@@ -63,7 +66,8 @@ const ImageSection = ({ data: { productGallery, image, altImage } }) => {
         {productGallery.map(({ image, altImage, id }) => (
           <div className="image-section-grid__img" key={id}>
             <Image
-              src={funcImageLoader(image)}
+              src={image}
+              loader={funcImageLoader}
               key={id}
               alt={altImage}
               layout="fill"

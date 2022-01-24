@@ -20,7 +20,8 @@ const BlogCard = ({ data }) => {
         notRound={true}
       >
         <Image
-          src={funcImageLoader(image)}
+          src={image}
+          loader={funcImageLoader}
           alt={title}
           width={500}
           height={300}

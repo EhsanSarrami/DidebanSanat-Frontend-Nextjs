@@ -21,7 +21,8 @@ const ServicesCard = ({ data }) => {
       />
       <div className="service-card__image">
         <Image
-          src={funcImageLoader(image)}
+          src={image}
+          loader={funcImageLoader}
           alt={title}
           layout="intrinsic"
           width={256}

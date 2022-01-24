@@ -24,7 +24,8 @@ const EventsDetailWrapper = ({ data }) => {
       <EventsDetailContainer className="wrapper">
         <div className="events-detail-image">
           <Image
-            src={funcImageLoader(image)}
+            src={image}
+            loader={funcImageLoader}
             alt={altImage}
             layout="fill"
             objectFit="cover"

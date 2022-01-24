@@ -17,7 +17,8 @@ const EventsCard = ({ data }) => {
         notRound={true}
       >
         <Image
-          src={funcImageLoader(image)}
+          src={image}
+          loader={funcImageLoader}
           alt={altImage}
           layout="fill"
           objectFit="cover"

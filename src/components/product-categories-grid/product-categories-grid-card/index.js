@@ -15,7 +15,8 @@ const ProductsCategoriesListCard = ({ data }) => {
         data-aos-duration="2000"
       >
         <Image
-          src={funcImageLoader(image)}
+          src={image}
+          loader={funcImageLoader}
           alt={name}
           className="products-categories-list-card__image"
           layout="fill"

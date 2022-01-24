@@ -36,7 +36,8 @@ const ProductCard = ({ data, type }) => {
         notRound={true}
       >
         <Image
-          src={funcImageLoader(image)}
+          src={image}
+          loader={funcImageLoader}
           layout="fill"
           objectFit="cover"
           quality={60}
