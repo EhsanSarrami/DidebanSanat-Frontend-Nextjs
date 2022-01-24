@@ -1,7 +1,7 @@
 import PagesHeader from "../../src/components/pages-header";
 import LocationData from "../../src/json/location-data/Events.json";
 import EventsList from "../../src/components/events/events-list";
-import { GET_EVENTS_DATA } from "../../src/graphql/Query";
+import { GET_EVENTS_DATA } from "../../src/graphql";
 import Axios from "../../src/services/AxiosConfig";
 import CostomHead from "../../src/components/custom-head";
 import { EventsHead } from "../../src/json/heades";

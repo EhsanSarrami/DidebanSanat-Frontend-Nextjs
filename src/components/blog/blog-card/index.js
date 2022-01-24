@@ -2,10 +2,12 @@ import React from "react";
 import { BlogCardWrapper } from "./style";
 import Image from "next/image";
 import StyledLink from "../../../core-ui/styled-link";
-import funcConvertDate from "../../../helper/funcConvertDate";
-import funcImageLoader from "../../../helper/funcImageLoader";
-import funcReplaceAll from "../../../helper/funcReplaceAll";
-import funcBlurDataUrl from "../../../helper/funcBlurDataUrl";
+import {
+  funcConvertDate,
+  funcImageLoader,
+  funcReplaceAll,
+  funcBlurDataUrl,
+} from "../../../helper";
 
 const BlogCard = ({ data }) => {
   const { title, author, publish, category, image, slug, id } = data;
