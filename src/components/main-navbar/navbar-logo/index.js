@@ -11,7 +11,7 @@ const NavbarLogo = ({ sticky }) => {
   return (
     <NavbarLogoWrapper>
       <StyledLink href="/">
-        {darkTheme ? (
+        {!darkTheme ? (
           sticky ? (
             <Image
               src="/image/DidebanLogoDark.png"

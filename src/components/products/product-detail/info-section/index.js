@@ -8,7 +8,7 @@ import {
 import DateConvertor from "../../../../helper/funcConvertDate";
 import StyledLink from "../../../../core-ui/styled-link";
 
-const TabItems = ["مشخصات", "مشخصات فنی", "توضیحات", "دریافت فایل"];
+const TabItems = ["مشخصات", "مشخصات فنی", "توضیحات", "دانلود دیتاشیت"];
 
 const InfoSection = ({ data }) => {
   const { title, updated, productModel, tecnicalDescription, longDescription } =
@@ -67,9 +67,9 @@ const InfoSection = ({ data }) => {
           />
         ) : (
           <div>
-            <a href="#" space="0.8em 2.5em">
+            <StyledLink href="#" space="0.8em 2.5em" isBtn={true}>
               دریافت فایل
-            </a>
+            </StyledLink>
           </div>
         )}
       </InfoSectionCol>

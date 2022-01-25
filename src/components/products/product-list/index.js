@@ -9,6 +9,8 @@ import ContentNotFound from "../../content-not-found";
 const ProductList = ({ data, categories, type }) => {
   const [filteredData, setFilteredData] = useState(data);
 
+  console.log(data);
+
   // use hash url hook
   const { hashUrl, hasHash } = useGetHashUrl();
 
@@ -25,11 +27,16 @@ const ProductList = ({ data, categories, type }) => {
     } else {
       setFilteredData(
         data.filter((product) => {
-          if (
-            funcReplaceAll(product.productSecondSubCategory.name, " ", "-") ===
-            hashUrl
-          )
-            return true;
+          if (product.productSecondSubCategory)
+            if (
+              funcReplaceAll(
+                product.productSecondSubCategory.name,
+                " ",
+                "-"
+              ) === hashUrl
+            )
+              return true;
+            else return data;
           if (!hasHash) return data;
         })
       );

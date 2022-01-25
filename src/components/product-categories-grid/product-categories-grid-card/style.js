@@ -11,8 +11,8 @@ export const ProductsCategoriesListCardWrapper = styled.div`
   border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.1) -20px 20px 25px -5px,
-    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 30px -5px,
+    rgba(0, 0, 0, 0.25) 0px 0px 10px -5px;
 
   .products-categories-list-card__image {
     display: flex;

@@ -16,7 +16,7 @@ const CallToActionTwo = () => {
     <CallToActionTwoContainer className="container flex-wrapper flex-center space-top">
       <CallToActionTwoWrapper className="wrapper flex-wrapper">
         <div>
-          {darkTheme ? (
+          {!darkTheme ? (
             <StyledLink
               className="call-to-action-two__body"
               href="/"

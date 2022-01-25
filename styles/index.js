@@ -12,7 +12,7 @@ const StyleProvider = ({ children }) => {
   const { darkTheme } = useContext(AppContext);
 
   return (
-    <ThemeProvider theme={darkTheme ? light : dark}>
+    <ThemeProvider theme={darkTheme ? dark : light}>
       <GlobalStyles />
       {children}
     </ThemeProvider>
