@@ -32,6 +32,7 @@ export const GET_BLOG_LIST = `
       slug
       category {
         name
+        slug
       }
     }
   }
@@ -75,6 +76,7 @@ query GetEventPosts {
     slug
     category {
       name
+      slug
     }
   }
 }

@@ -12,3 +12,11 @@ export {
   SUB_PRODUCTS_CATEGORIES,
   GET_PRODUCT_Detail,
 } from "./Query";
+
+// export sitemap queries
+export {
+  productsCategoryGql,
+  productsGql,
+  blogPostGql,
+  eventsPostGql,
+} from "./SitemapQueries";

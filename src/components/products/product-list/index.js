@@ -9,8 +9,6 @@ import ContentNotFound from "../../content-not-found";
 const ProductList = ({ data, categories, type }) => {
   const [filteredData, setFilteredData] = useState(data);
 
-  console.log(data);
-
   // use hash url hook
   const { hashUrl, hasHash } = useGetHashUrl();
 

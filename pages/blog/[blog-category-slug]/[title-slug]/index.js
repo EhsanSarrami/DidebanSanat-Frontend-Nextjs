@@ -1,15 +1,14 @@
-import React from "react";
-import Axios from "../../../src/services/AxiosConfig";
-import { GET_EVENT_POST } from "../../../src/graphql";
-import PagesHeader from "../../../src/components/pages-header";
-import LocationData from "../../../src/json/location-data/Events.json";
-import funcLocationGenerator from "../../../src/helper/funcLocationGenerator";
-import EventsDetailWrapper from "../../../src/components/events/events-detail";
-import CostomHead from "../../../src/components/custom-head";
+import Axios from "../../../../src/services/AxiosConfig";
+import { GET_BLOG_POST } from "../../../../src/graphql";
+import PagesHeader from "../../../../src/components/pages-header";
+import LocationData from "../../../../src/json/location-data/Blog.json";
+import funcLocationGenerator from "../../../../src/helper/funcLocationGenerator";
+import BlogDetailWrapper from "../../../../src/components/blog/blog-detail";
+import CostomHead from "../../../../src/components/custom-head";
 
-const EventsDetail = ({ event }) => {
+const BlogDetail = ({ BlogPost }) => {
   // destructure BlogPost
-  const { title, image, metaTitle, metaDescription, metaKeywords } = event;
+  const { title, image, metaTitle, metaDescription, metaKeywords } = BlogPost;
 
   // head meta tags data
   const HeadData = {
@@ -66,24 +65,24 @@ const EventsDetail = ({ event }) => {
         locationList={funcLocationGenerator(LocationData, title)}
         DynamicBg={image}
       />
-      <EventsDetailWrapper data={event} />
+      <BlogDetailWrapper data={BlogPost} />
     </>
   );
 };
 
-export default EventsDetail;
+export default BlogDetail;
 
 export const getServerSideProps = async (context) => {
-  // get event post
+  // get blog post
   const {
     data: {
-      data: { event },
+      data: { BlogPost },
     },
-  } = await Axios(GET_EVENT_POST, { id: context.query.id });
+  } = await Axios(GET_BLOG_POST, { id: context.query.id });
 
   return {
     props: {
-      event,
+      BlogPost,
     },
   };
 };

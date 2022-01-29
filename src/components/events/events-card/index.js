@@ -13,7 +13,11 @@ const EventsCard = ({ data }) => {
     <EventsCardWrapper>
       <StyledLink
         className="events-card-image"
-        href={`/events/${funcReplaceAll(title, " ", "-")}-${slug}?id=${id}`}
+        href={`/events/${category.slug}/${funcReplaceAll(
+          title,
+          " ",
+          "-"
+        )}-${slug}?id=${id}`}
         notRound={true}
       >
         <Image
@@ -30,7 +34,11 @@ const EventsCard = ({ data }) => {
       <div className="events-card-content">
         <StyledLink
           className="events-card__title"
-          href={`/events/${funcReplaceAll(title, " ", "-")}-${slug}?id=${id}`}
+          href={`/events/${category.slug}/${funcReplaceAll(
+            title,
+            " ",
+            "-"
+          )}-${slug}?id=${id}`}
         >
           {title}
         </StyledLink>

@@ -16,7 +16,11 @@ const BlogCard = ({ data }) => {
     <BlogCardWrapper>
       <StyledLink
         className="blog-card-image"
-        href={`/blog/${funcReplaceAll(title, " ", "-")}_${slug}?id=${id}`}
+        href={`/blog/${category.slug}/${funcReplaceAll(
+          title,
+          " ",
+          "-"
+        )}_${slug}?id=${id}`}
         notRound={true}
       >
         <Image

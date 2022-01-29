@@ -42,6 +42,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap"
             rel="stylesheet"
           />
+          <meta
+            name="author"
+            content="CTO & PM : Ashkan zarekohan | FrontEnd : Alireza Ghadyani | BackEnd : Mohammad Reza Taheri "
+          />
         </Head>
         <body>
           <Main />

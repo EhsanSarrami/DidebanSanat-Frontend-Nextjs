@@ -8,26 +8,31 @@
       },
       {
         "id": 2,
+        "name": "keywords",
+        "content": "وبلاگ شرکت توسعه ارتباطات دیده بان صنعت"
+      },
+      {
+        "id": 3,
         "name": "robots",
         "content": "index, follow"
       },
       {
-        "id": 3,
+        "id": 4,
         "property": "og:site_name",
         "content": "didebansanat"
       },
       {
-        "id": 4,
+        "id": 5,
         "property": "og:title",
         "content": "didebansanat"
       },
       {
-        "id": 5,
+        "id": 6,
         "property": "og:image",
         "content": "/image/DidebanLogo.png"
       },
       {
-        "id": 6,
+        "id": 7,
         "property": "og:url",
         "content": "https://didebansanat.com/"
       }
