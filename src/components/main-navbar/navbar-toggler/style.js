@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const NavbarTogglerWrapper = styled.button`
-  width: 2.1rem;
-  height: 2.4rem;
+  width: 2rem;
+  height: 2rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -12,6 +12,11 @@ export const NavbarTogglerWrapper = styled.button`
   display: none;
   @media (max-width: 992px) {
     display: flex;
+  }
+
+  @media (max-width: 576px) {
+    width: 1.8rem;
+    height: 1.6rem;
   }
 
   .navbar-toggler__line {

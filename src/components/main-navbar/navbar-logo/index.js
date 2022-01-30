@@ -1,29 +1,51 @@
 import { useContext } from "react";
 import { AppContext } from "../../../context";
-import NavbarLogoWrapper from "./style";
+import { NavbarLogoWrapper, NavbarBtn } from "./style";
 import StyledLink from "../../../core-ui/styled-link";
 import Image from "next/image";
+import { BsFillMoonFill, BsSunFill } from "react-icons/bs";
+import { GoSearch } from "react-icons/go";
+import { setStoreage } from "../../../helper";
 
-const NavbarLogo = ({ sticky }) => {
+const NavbarLogo = ({ sticky, setOpenSearchBar }) => {
   // use context
-  const { darkTheme } = useContext(AppContext);
+  const { darkTheme, changeTheme } = useContext(AppContext);
+
+  // handle change theme
+  const handleChangeTheme = () => {
+    setStoreage("darkTheme", JSON.stringify(!darkTheme));
+    changeTheme();
+  };
+
+  // handle open searchbar
+  const handleOpenSearchbar = () => setOpenSearchBar((prev) => !prev);
 
   return (
-    <NavbarLogoWrapper>
-      <StyledLink href="/">
+    <NavbarLogoWrapper sticky={sticky}>
+      <NavbarBtn sticky={sticky} onClick={handleOpenSearchbar}>
+        <GoSearch />
+      </NavbarBtn>
+
+      <NavbarBtn sticky={sticky} onClick={handleChangeTheme}>
+        {darkTheme ? <BsSunFill /> : <BsFillMoonFill />}
+      </NavbarBtn>
+
+      <div className="navbar-logo-divider" />
+
+      <StyledLink href="/" className="navbar-logo-img">
         {!darkTheme ? (
           sticky ? (
             <Image
               src="/image/DidebanLogoDark.png"
               alt="dideban sanat"
-              width={147}
+              width={135}
               height={50}
             />
           ) : (
             <Image
               src="/image/DidebanLogo.png"
               alt="dideban sanat"
-              width={147}
+              width={135}
               height={50}
             />
           )
@@ -31,7 +53,7 @@ const NavbarLogo = ({ sticky }) => {
           <Image
             src="/image/DidebanLogo.png"
             alt="dideban sanat"
-            width={147}
+            width={135}
             height={50}
           />
         )}

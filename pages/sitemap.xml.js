@@ -23,7 +23,9 @@ export const getServerSideProps = async ({ res }) => {
       return !unusedPages.includes(staticPages);
     })
     .map((staticPagePath) => {
-      return `${BASE_URL}/${staticPagePath}`;
+      if (staticPagePath.includes(".js")) {
+        return `${BASE_URL}/${staticPagePath.replace(".js", "")}`;
+      } else return `${BASE_URL}/${staticPagePath}`;
     });
 
   /********************** generate dynamic paths **********************/
@@ -100,6 +102,7 @@ export const getServerSideProps = async ({ res }) => {
 
   // combined paths
   const combinedPaths = [
+    `${BASE_URL}`,
     ...staticPaths,
     ...productsCategoriesPaths,
     ...productsPaths,

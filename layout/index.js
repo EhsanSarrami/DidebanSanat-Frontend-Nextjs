@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
       <CallToActionTwo />
       <MainFooter />
       <Toaster toastOptions={{ className: "hot-toast-container" }} />
-      <ThemeSwitcher />
+      {/* <ThemeSwitcher /> */}
     </StyleProvider>
   );
 };

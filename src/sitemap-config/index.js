@@ -8,6 +8,7 @@ const unusedPages = [
   "_document.js",
   "404.js",
   "sitemap.xml.js",
+  "index.js",
 ];
 
 export { BASE_URL, unusedPages };
