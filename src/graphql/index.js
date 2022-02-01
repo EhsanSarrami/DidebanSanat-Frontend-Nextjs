@@ -11,6 +11,7 @@ export {
   GET_PRODUCTS_CATEGORIES,
   SUB_PRODUCTS_CATEGORIES,
   GET_PRODUCT_Detail,
+  SEARCH_PRODUCTS,
 } from "./Query";
 
 // export sitemap queries

@@ -3,7 +3,7 @@ import { AppContext } from "../../../context";
 import { NavbarLogoWrapper, NavbarBtn } from "./style";
 import StyledLink from "../../../core-ui/styled-link";
 import Image from "next/image";
-import { BsFillMoonFill, BsSunFill } from "react-icons/bs";
+import { BsMoon, BsSunFill } from "react-icons/bs";
 import { GoSearch } from "react-icons/go";
 import { setStoreage } from "../../../helper";
 
@@ -27,7 +27,7 @@ const NavbarLogo = ({ sticky, setOpenSearchBar }) => {
       </NavbarBtn>
 
       <NavbarBtn sticky={sticky} onClick={handleChangeTheme}>
-        {darkTheme ? <BsSunFill /> : <BsFillMoonFill />}
+        {darkTheme ? <BsSunFill /> : <BsMoon />}
       </NavbarBtn>
 
       <div className="navbar-logo-divider" />

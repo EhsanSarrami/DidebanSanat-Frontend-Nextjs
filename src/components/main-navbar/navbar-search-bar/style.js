@@ -21,6 +21,7 @@ export const NavbarSearchBarContainer = styled.div`
 
 export const NavbarSearchBarWrapper = styled.div`
   width: 450px;
+  max-width: 100%;
   height: 100vh;
   position: absolute;
   right: 0;
@@ -34,6 +35,11 @@ export const NavbarSearchBarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-Y: scroll;
+
+  & ::-webkit-scrollbar {
+    width: 0px;
+  }
 `;
 
 export const NavbarSearchBarHeader = styled.div`

@@ -227,3 +227,24 @@ query GetProductDetail($id: Int) {
   }
 }
 `;
+
+export const SEARCH_PRODUCTS = `
+query SearchProducts($search: String) {
+  products(search: $search) {
+    id
+    title
+    slug
+    image
+    altImage
+    productModel
+    productParentCategory {
+      slug
+      name
+    }
+    productFirstSubCategory {
+      name
+    }
+  }
+}
+
+`;
