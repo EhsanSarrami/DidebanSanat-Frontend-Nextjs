@@ -11,8 +11,14 @@ import StyledLink from "../../../../core-ui/styled-link";
 const TabItems = ["مشخصات", "مشخصات فنی", "توضیحات", "دانلود دیتاشیت"];
 
 const InfoSection = ({ data }) => {
-  const { title, updated, productModel, tecnicalDescription, longDescription } =
-    data;
+  const {
+    title,
+    updated,
+    productModel,
+    tecnicalDescription,
+    longDescription,
+    datasheat,
+  } = data;
 
   const [currentTab, setCurrentTab] = useState(TabItems[0]);
 
@@ -67,7 +73,13 @@ const InfoSection = ({ data }) => {
           />
         ) : (
           <div>
-            <StyledLink href="#" space="0.8em 2.5em" isBtn={true}>
+            <StyledLink
+              space="0.8em 2.5em"
+              isBtn={true}
+              href={`https://api.didebansanat.com/media/${datasheat}`}
+              target="_blank"
+              isAnchor={true}
+            >
               دریافت فایل
             </StyledLink>
           </div>

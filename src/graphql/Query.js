@@ -224,6 +224,7 @@ query GetProductDetail($id: Int) {
       image
       altImage
     }
+    datasheat
   }
 }
 `;
