@@ -20,16 +20,18 @@ const EventsCard = ({ data }) => {
         )}-${slug}?id=${id}`}
         notRound={true}
       >
-        <Image
-          src={image}
-          loader={funcImageLoader}
-          alt={altImage}
-          layout="fill"
-          objectFit="cover"
-          quality={60}
-          placeholder="blur"
-          blurDataURL={funcBlurDataUrl()}
-        />
+        {image && (
+          <Image
+            src={image}
+            loader={funcImageLoader}
+            alt={altImage}
+            layout="fill"
+            objectFit="cover"
+            quality={60}
+            placeholder="blur"
+            blurDataURL={funcBlurDataUrl()}
+          />
+        )}
       </StyledLink>
       <div className="events-card-content">
         <StyledLink

@@ -14,17 +14,19 @@ const ProductsCategoriesListCard = ({ data }) => {
         data-aos="fade-up"
         data-aos-duration="2000"
       >
-        <Image
-          src={image}
-          loader={funcImageLoader}
-          alt={name}
-          className="products-categories-list-card__image"
-          layout="fill"
-          objectFit="cover"
-          quality={60}
-          placeholder="blur"
-          blurDataURL={funcBlurDataUrl()}
-        />
+        {image && (
+          <Image
+            src={image}
+            loader={funcImageLoader}
+            alt={name}
+            className="products-categories-list-card__image"
+            layout="fill"
+            objectFit="cover"
+            quality={60}
+            placeholder="blur"
+            blurDataURL={funcBlurDataUrl()}
+          />
+        )}
         <h2 className="products-categories-list-card__name">{name}</h2>
       </ProductsCategoriesListCardWrapper>
     </StyledLink>

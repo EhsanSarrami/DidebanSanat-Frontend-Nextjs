@@ -23,18 +23,20 @@ const BlogCard = ({ data }) => {
         )}_${slug}?id=${id}`}
         notRound={true}
       >
-        <Image
-          src={image}
-          loader={funcImageLoader}
-          alt={title}
-          width={500}
-          height={300}
-          layout="intrinsic"
-          objectFit="cover"
-          quality={60}
-          placeholder="blur"
-          blurDataURL={funcBlurDataUrl()}
-        />
+        {image && (
+          <Image
+            src={image}
+            loader={funcImageLoader}
+            alt={title}
+            width={500}
+            height={300}
+            layout="intrinsic"
+            objectFit="cover"
+            quality={60}
+            placeholder="blur"
+            blurDataURL={funcBlurDataUrl()}
+          />
+        )}
       </StyledLink>
       <div className="blog-card-content">
         <h5 className="blog-card__date">

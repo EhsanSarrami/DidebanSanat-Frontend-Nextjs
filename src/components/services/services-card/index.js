@@ -20,17 +20,19 @@ const ServicesCard = ({ data }) => {
         }}
       />
       <div className="service-card__image">
-        <Image
-          src={image}
-          loader={funcImageLoader}
-          alt={title}
-          layout="intrinsic"
-          width={256}
-          height={159}
-          quality={50}
-          placeholder="blur"
-          blurDataURL={funcBlurDataUrl()}
-        />
+        {image && (
+          <Image
+            src={image}
+            loader={funcImageLoader}
+            alt={title}
+            layout="intrinsic"
+            width={256}
+            height={159}
+            quality={50}
+            placeholder="blur"
+            blurDataURL={funcBlurDataUrl()}
+          />
+        )}
       </div>
     </ServiceCardWrapper>
   );

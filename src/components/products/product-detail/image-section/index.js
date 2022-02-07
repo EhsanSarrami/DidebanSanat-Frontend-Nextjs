@@ -13,70 +13,76 @@ const ImageSection = ({ data: { productGallery, image, altImage } }) => {
       <div className="image-section__current-image flex-wrapper flex-center">
         <TransformWrapper>
           <TransformComponent>
-            {current === 0 ? (
-              <Image
-                src={image}
-                loader={funcImageLoader}
-                alt={altImage}
-                layout="fill"
-                objectFit="cover"
-                quality={60}
-                data-aos="fade-up"
-                placeholder="blur"
-                blurDataURL={funcBlurDataUrl()}
-              />
-            ) : (
-              productGallery.map(({ image, altImage, id }) => {
-                if (id === current)
-                  return (
-                    <Image
-                      src={image}
-                      loader={funcImageLoader}
-                      alt={altImage}
-                      key={id}
-                      layout="fill"
-                      objectFit="cover"
-                      quality={60}
-                      data-aos="fade-up"
-                      placeholder="blur"
-                      blurDataURL={funcBlurDataUrl()}
-                    />
-                  );
+            {current === 0
+              ? image && (
+                  <Image
+                    src={image}
+                    loader={funcImageLoader}
+                    alt={altImage}
+                    layout="fill"
+                    objectFit="cover"
+                    quality={60}
+                    data-aos="fade-up"
+                    placeholder="blur"
+                    blurDataURL={funcBlurDataUrl()}
+                  />
+                )
+              : productGallery.map(({ image, altImage, id }) => {
+                  if (id === current)
+                    return (
+                      image && (
+                        <Image
+                          src={image}
+                          loader={funcImageLoader}
+                          alt={altImage}
+                          key={id}
+                          layout="fill"
+                          objectFit="cover"
+                          quality={60}
+                          data-aos="fade-up"
+                          placeholder="blur"
+                          blurDataURL={funcBlurDataUrl()}
+                        />
+                      )
+                    );
 
-                return null;
-              })
-            )}
+                  return null;
+                })}
           </TransformComponent>
         </TransformWrapper>
       </div>
       <div className="image-section-grid">
         <div className="image-section-grid__img">
-          <Image
-            src={image}
-            loader={funcImageLoader}
-            alt={altImage}
-            layout="fill"
-            objectFit="cover"
-            quality={60}
-            onClick={() => setCurrent(0)}
-            placeholder="blur"
-            blurDataURL={funcBlurDataUrl()}
-          />
-        </div>
-        {productGallery.map(({ image, altImage, id }) => (
-          <div className="image-section-grid__img" key={id}>
+          {image && (
             <Image
               src={image}
               loader={funcImageLoader}
-              key={id}
               alt={altImage}
               layout="fill"
               objectFit="cover"
               quality={60}
-              onClick={() => setCurrent(id)}
+              onClick={() => setCurrent(0)}
               placeholder="blur"
               blurDataURL={funcBlurDataUrl()}
             />
+          )}
+        </div>
+        {productGallery.map(({ image, altImage, id }) => (
+          <div className="image-section-grid__img" key={id}>
+            {image && (
+              <Image
+                src={image}
+                loader={funcImageLoader}
+                key={id}
+                alt={altImage}
+                layout="fill"
+                objectFit="cover"
+                quality={60}
+                onClick={() => setCurrent(id)}
+                placeholder="blur"
+                blurDataURL={funcBlurDataUrl()}
+              />
+            )}
           </div>
         ))}
       </div>

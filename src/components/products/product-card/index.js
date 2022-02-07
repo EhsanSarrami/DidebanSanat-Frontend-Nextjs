@@ -35,16 +35,19 @@ const ProductCard = ({ data, type }) => {
         href={renderUrl()}
         notRound={true}
       >
-        <Image
-          src={image}
-          loader={funcImageLoader}
-          layout="fill"
-          objectFit="cover"
-          quality={60}
-          alt={type === "parent" ? name : title}
-          placeholder="blur"
-          blurDataURL={funcBlurDataUrl()}
-        />
+        {image && (
+          <Image
+            src={image}
+            loader={funcImageLoader}
+            layout="fill"
+            objectFit="cover"
+            quality={50}
+            alt={type === "parent" ? name : title}
+            placeholder="blur"
+            blurDataURL={funcBlurDataUrl()}
+            priority={true}
+          />
+        )}
       </StyledLink>
       <StyledLink className="product-card__name" href={renderUrl()}>
         {type === "parent" ? name : title}

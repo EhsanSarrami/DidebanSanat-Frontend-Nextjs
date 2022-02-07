@@ -23,17 +23,19 @@ const EventsDetailWrapper = ({ data }) => {
     <article className="container space-top flex-wrapper flex-center">
       <EventsDetailContainer className="wrapper">
         <div className="events-detail-image">
-          <Image
-            src={image}
-            loader={funcImageLoader}
-            alt={altImage}
-            layout="fill"
-            objectFit="cover"
-            quality={60}
-            data-aos="fade-up"
-            placeholder="blur"
-            blurDataURL={funcBlurDataUrl()}
-          />
+          {image && (
+            <Image
+              src={image}
+              loader={funcImageLoader}
+              alt={altImage}
+              layout="fill"
+              objectFit="cover"
+              quality={60}
+              data-aos="fade-up"
+              placeholder="blur"
+              blurDataURL={funcBlurDataUrl()}
+            />
+          )}
         </div>
         <div className="events-detail-header" data-aos="fade-up">
           <h4>

@@ -19,17 +19,18 @@ const SplitSection = ({ data }) => {
         </SplitSectionContent>
 
         <div className="split-section-image">
-          <Image
-            src={`/image/SplitSection/${image}`}
-            alt={title}
-            layout="fill"
-            objectFit="cover"
-            quality={60}
-            placeholder="blur"
-            blurDataURL={funcBlurDataUrl()}
-          />
+          {image && (
+            <Image
+              src={`/image/SplitSection/${image}`}
+              alt={title}
+              layout="fill"
+              objectFit="cover"
+              quality={60}
+              placeholder="blur"
+              blurDataURL={funcBlurDataUrl()}
+            />
+          )}
         </div>
-
       </SplitSectionWrapper>
     </div>
   );
