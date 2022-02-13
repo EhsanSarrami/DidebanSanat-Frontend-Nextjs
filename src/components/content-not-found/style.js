@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContentNotFoundWrapper = styled.div`
   flex-direction: column;
-  margin: 14em auto;
+  margin: ${(props) => (props.margin ? props.margin : "14em auto")};
   text-align: center;
   color: ${({ theme }) => theme.textTertiary};
   & svg {

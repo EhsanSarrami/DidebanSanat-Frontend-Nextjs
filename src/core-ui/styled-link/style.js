@@ -6,7 +6,8 @@ const StyledLinkWrapper = styled.a`
   font-weight: 700;
   text-align: center;
   padding: ${(props) => props.space};
-  color: ${(props) => props.theme.white};
+  color: ${(props) =>
+    props.color ? props.theme[props.color] : props.theme.white};
   background: ${(props) =>
     props.isBtn
       ? "linear-gradient(95deg, #059dff 15%, #6549d5 45%, #e33fa1 75%, #fb5343) 95%/200% 100%"

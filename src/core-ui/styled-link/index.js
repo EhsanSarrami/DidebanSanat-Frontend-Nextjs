@@ -11,9 +11,14 @@ const StyledLink = ({ href, children, scroll, isAnchor, target, ...props }) => {
     );
   else
     return (
-      <a href={href} scroll={scroll ? scroll : false} target={target}>
-        <StyledLinkWrapper {...props}>{children}</StyledLinkWrapper>
-      </a>
+      <StyledLinkWrapper
+        href={href}
+        scroll={scroll ? scroll : false}
+        target={target}
+        {...props}
+      >
+        {children}
+      </StyledLinkWrapper>
     );
 };
 

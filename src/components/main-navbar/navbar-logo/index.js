@@ -40,6 +40,7 @@ const NavbarLogo = ({ sticky, setOpenSearchBar }) => {
               alt="dideban sanat"
               width={135}
               height={50}
+              priority={true}
             />
           ) : (
             <Image
@@ -47,6 +48,7 @@ const NavbarLogo = ({ sticky, setOpenSearchBar }) => {
               alt="dideban sanat"
               width={135}
               height={50}
+              priority={true}
             />
           )
         ) : (
@@ -55,6 +57,7 @@ const NavbarLogo = ({ sticky, setOpenSearchBar }) => {
             alt="dideban sanat"
             width={135}
             height={50}
+            priority={true}
           />
         )}
       </StyledLink>

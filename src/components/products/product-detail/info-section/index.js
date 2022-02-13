@@ -6,9 +6,10 @@ import {
   InfoSectionCol,
 } from "./style";
 import DateConvertor from "../../../../helper/funcConvertDate";
-import StyledLink from "../../../../core-ui/styled-link";
+import Tecnical from "./tecnical";
+import Description from "./description";
 
-const TabItems = ["مشخصات", "مشخصات فنی", "توضیحات", "دانلود دیتاشیت"];
+const TabItems = ["مشخصات", "مشخصات فنی", "توضیحات"];
 
 const InfoSection = ({ data }) => {
   const {
@@ -20,6 +21,7 @@ const InfoSection = ({ data }) => {
     datasheat,
   } = data;
 
+  // current tab state
   const [currentTab, setCurrentTab] = useState(TabItems[0]);
 
   return (
@@ -34,9 +36,20 @@ const InfoSection = ({ data }) => {
             {item}
           </InfoSectionTabItem>
         ))}
+        <InfoSectionTabItem>
+          {datasheat && (
+            <a
+              href={`https://api.didebansanat.com/media/${datasheat}`}
+              target="_blank"
+              active={currentTab === "دانلود دیتاشیت"}
+            >
+              دانلود دیتاشیت
+            </a>
+          )}
+        </InfoSectionTabItem>
       </InfoSectionTab>
       <InfoSectionCol data-aos="fade-up">
-        {currentTab === "مشخصات" ? (
+        {currentTab === TabItems[0] ? (
           <div className="info-section-specifications">
             <div className="section-specifications__item">
               <label className="specifications-item__title">
@@ -61,28 +74,10 @@ const InfoSection = ({ data }) => {
               </span>
             </div>
           </div>
-        ) : currentTab === "مشخصات فنی" ? (
-          <div
-            className="info-section-fetures"
-            dangerouslySetInnerHTML={{ __html: tecnicalDescription }}
-          />
-        ) : currentTab === "توضیحات" ? (
-          <div
-            className="info-section-desc"
-            dangerouslySetInnerHTML={{ __html: longDescription }}
-          />
+        ) : currentTab === TabItems[1] ? (
+          <Tecnical data={tecnicalDescription} />
         ) : (
-          <div>
-            <StyledLink
-              space="0.8em 2.5em"
-              isBtn={true}
-              href={`https://api.didebansanat.com/media/${datasheat}`}
-              target="_blank"
-              isAnchor={true}
-            >
-              دریافت فایل
-            </StyledLink>
-          </div>
+          currentTab === TabItems[2] && <Description data={longDescription} />
         )}
       </InfoSectionCol>
     </InfoSectionWrapper>

@@ -46,7 +46,7 @@ const ProductList = ({ data, categories, type }) => {
       className="container flex-wrapper flex-center"
       data-aos="fade-up"
     >
-      <CategoryFilter data={categories} />
+      {categories.length > 0 && <CategoryFilter data={categories} />}
 
       {data.length > 0 ? (
         <ProductListWrapper className="wrapper">

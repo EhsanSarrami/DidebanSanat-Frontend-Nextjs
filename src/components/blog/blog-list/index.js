@@ -38,7 +38,7 @@ const BlogList = ({ categories, posts }) => {
     <BlogListContainer className="container space-top flex-wrapper flex-center">
       <SectionTitle subTitle="وبلاگ" title="وبلاگ دیده بان صنعت" />
       <>
-        <CategoryFilter data={categories} />
+        {categories.length > 0 && <CategoryFilter data={categories} />}
 
         <GridWrapper gap="3em" mgTop="4em" className="wrapper">
           {currentPosts.map((item) => (

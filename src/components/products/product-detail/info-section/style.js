@@ -40,6 +40,13 @@ export const InfoSectionTabItem = styled.li`
   @media (max-width: 385px) {
     padding: 0.6em 0;
   }
+
+  & a {
+    color: ${(props) =>
+      props.active ? props.theme.white : props.theme.textPrimary};
+    background: ${(props) =>
+      props.active ? props.theme.primaryColor : "transparent"};
+  }
 `;
 
 export const InfoSectionCol = styled.div`

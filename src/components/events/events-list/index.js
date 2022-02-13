@@ -38,7 +38,7 @@ const EventsList = ({ categories, posts }) => {
     <BlogListContainer className="container space-top flex-wrapper flex-center">
       <SectionTitle subTitle="رویداد ها" title="رویدادهای دیده بان صنعت" />
       <>
-        <CategoryFilter data={categories} />
+        {categories.length > 0 && <CategoryFilter data={categories} />}
 
         <GridWrapper size="26rem" gap="3em" mgTop="4em" className="wrapper">
           {currentPosts.map((item) => (
