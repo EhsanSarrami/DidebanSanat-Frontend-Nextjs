@@ -41,7 +41,7 @@ const InfoSection = ({ data }) => {
             <a
               href={`https://api.didebansanat.com/media/${datasheat}`}
               target="_blank"
-              active={currentTab === "دانلود دیتاشیت"}
+              rel="noreferrer"
             >
               دانلود دیتاشیت
             </a>

@@ -44,23 +44,34 @@ export const ImageSectionWrapper = styled.div`
     position: relative;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
     grid-gap: 2em;
     margin-top: 3em;
 
     .image-section-grid__img {
       position: relative;
       width: 100%;
-      height: 130px;
+      height: 145px;
       border-radius: 10px;
       overflow: hidden;
       cursor: pointer;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+      @media (max-width: 768px) {
+        height: 115px;
+      }
+
+      @media (max-width: 576px) {
+        height: 90px;
+      }
     }
 
     @media (max-width: 768px) {
-      grid-template-columns: repeat(auto-fill, minmax(4rem, 1fr));
-      grid-gap: 1em;
+      grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
     }
   }
 `;
